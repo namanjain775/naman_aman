@@ -1,4 +1,12 @@
-void pass1( char a[50],char b[10],int d[60],char pname[50],FILE *fp1,FILE *fp2,FILE *f,int *size)
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<conio.h>
+void pass1(char[],char[],int[],char[],FILE *,FILE *,FILE *,int *);
+void pass2(char[],char [],int [],FILE *,FILE *,FILE *);
+void objprog(char[],int [],int);
+int hexvalue( int,int,int,int,int);
+void pass1( char a[50],char b[10],int d[60],char pname[50],FILE *fp1,FILE *fp2,FILE *f,int *size) 
  {
  	int byte,locctr,count=0,length,i=0,j,gopcode;
  	char c;
@@ -163,3 +171,36 @@ void pass1( char a[50],char b[10],int d[60],char pname[50],FILE *fp1,FILE *fp2,F
     
 }
 
+int hexvalue(int x,int y,int p,int e,int l)
+     {
+     	int f1=0,f2=0,f3=0;
+     	int j=0,hexadecimalval=0,hex[10]
+								,k=1,remainder;
+							    hex[j]=x;
+							    j++;
+							    hex[j]=y;
+							    j++;
+							    hex[j]=p;
+							    j++;
+							    hex[j]=e;
+							    j++;
+							    hex[j]=l;
+							    j++;
+							    hex[j]=f1;
+							    j++;
+							    hex[j]=f2;
+							    j++;
+							    hex[j]=f3;
+							    
+							            
+							             for(j=7;j>=0;j--)
+                                    	{
+                                            remainder = hex[j];
+                                            hexadecimalval = hexadecimalval + remainder * k;
+                                             k = k * 2;
+                                         }
+                                         return(hexadecimalval);
+			
+     	
+     }
+  
